@@ -35,7 +35,6 @@
             overflow-x: hidden;
         }
 
-        /* Grid Background */
         body::before {
             content: '';
             position: fixed;
@@ -59,7 +58,6 @@
             z-index: 1;
         }
 
-        /* Header */
         header {
             padding: 2rem 0;
             position: sticky;
@@ -111,7 +109,6 @@
             color: var(--accent);
         }
 
-        /* Resume Container */
         .resume {
             padding: 4rem 0;
             animation: fadeIn 0.8s ease-out;
@@ -129,7 +126,6 @@
             }
         }
 
-        /* Resume Header */
         .resume-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -170,7 +166,6 @@
             gap: 0.5rem;
         }
 
-        /* Section */
         .resume-section {
             margin-bottom: 3rem;
         }
@@ -197,7 +192,6 @@
             background: var(--accent);
         }
 
-        /* Summary */
         .summary {
             font-size: 1.1rem;
             color: var(--text-dim);
@@ -205,7 +199,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -253,12 +246,38 @@
             color: var(--accent);
         }
 
-        /* Experience */
         .experience-item {
             margin-bottom: 2.5rem;
             padding-left: 2rem;
             border-left: 2px solid var(--border);
             position: relative;
+        }
+
+        @media print {
+
+            .experience-item ul li:nth-child(n+2) {
+                display: none !important;
+            }
+
+            .experience-item p {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 4px !important;
+            }
+
+            .resume-section {
+                margin-bottom: 8px !important;
+            }
+
+            body {
+                line-height: 1.15 !important;
+            }
+
+            .experience-item {
+                line-height: 1.25 !important;
+            }
         }
 
         .experience-item::before {
@@ -320,7 +339,6 @@
             font-weight: bold;
         }
 
-        /* Project Highlights */
         .project-highlight {
             background: var(--secondary);
             padding: 1.5rem;
@@ -354,7 +372,6 @@
             font-size: 0.95rem;
         }
 
-        /* Download Button */
         .download-button {
             display: inline-flex;
             align-items: center;
@@ -378,7 +395,6 @@
             box-shadow: 0 10px 30px rgba(0, 245, 160, 0.3);
         }
 
-        /* Footer */
         footer {
             padding: 3rem 0;
             border-top: 1px solid var(--border);
@@ -391,8 +407,52 @@
             color: var(--text-dim);
         }
 
-        /* Print Styles */
         @media print {
+
+            .experience-item ul li:nth-child(n+2) {
+                display: none !important;
+            }
+
+            .experience-item p {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 4px !important;
+            }
+
+            .resume-section {
+                margin-bottom: 8px !important;
+            }
+
+            body {
+                line-height: 1.15 !important;
+            }
+
+            .experience-item ul li:nth-child(n+3) {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 8px !important;
+            }
+
+            .experience-item h3 {
+                margin-bottom: 2px !important;
+            }
+
+            .experience-item p {
+                margin-bottom: 4px !important;
+            }
+
+            .skill-list li:has(span:contains("Business Systems")) {
+                display: none !important;
+            }
+
+            .skill-list li:has(span:contains("Process & Operations")) {
+                display: none !important;
+            }
+
             body::before {
                 display: none;
             }
@@ -408,7 +468,6 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .resume-name {
                 font-size: 2rem;
@@ -448,8 +507,52 @@
             color: var(--accent);
         }
 
-        /* PRINT FIX: ensure name is visible */
         @media print {
+
+            .experience-item ul li:nth-child(n+2) {
+                display: none !important;
+            }
+
+            .experience-item p {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 4px !important;
+            }
+
+            .resume-section {
+                margin-bottom: 8px !important;
+            }
+
+            body {
+                line-height: 1.15 !important;
+            }
+
+            .experience-item ul li:nth-child(n+3) {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 8px !important;
+            }
+
+            .experience-item h3 {
+                margin-bottom: 2px !important;
+            }
+
+            .experience-item p {
+                margin-bottom: 4px !important;
+            }
+
+            .skill-list li:has(span:contains("Business Systems")) {
+                display: none !important;
+            }
+
+            .skill-list li:has(span:contains("Process & Operations")) {
+                display: none !important;
+            }
+
             .resume-name {
                 color: #000 !important;
                 -webkit-text-fill-color: #000 !important;
@@ -469,17 +572,57 @@
             }
         }
 
-
-        /* PRINT: Simplified clean resume (no colors/boxes/footer) */
         @media print {
 
-            /* Hide non-essential chrome */
+            .experience-item ul li:nth-child(n+2) {
+                display: none !important;
+            }
+
+            .experience-item p {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 4px !important;
+            }
+
+            .resume-section {
+                margin-bottom: 8px !important;
+            }
+
+            body {
+                line-height: 1.15 !important;
+            }
+
+            .experience-item ul li:nth-child(n+3) {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 8px !important;
+            }
+
+            .experience-item h3 {
+                margin-bottom: 2px !important;
+            }
+
+            .experience-item p {
+                margin-bottom: 4px !important;
+            }
+
+            .skill-list li:has(span:contains("Business Systems")) {
+                display: none !important;
+            }
+
+            .skill-list li:has(span:contains("Process & Operations")) {
+                display: none !important;
+            }
+
             header,
             footer {
                 display: none !important;
             }
 
-            /* Page + typography */
             @page {
                 margin: 12mm;
             }
@@ -493,7 +636,6 @@
                 display: none !important;
             }
 
-            /* Neutralize accents */
             :root {
                 --accent: #000;
                 --accent-dim: #000;
@@ -504,7 +646,6 @@
                 --border: transparent;
             }
 
-            /* Remove cards/boxes */
             .skill-category,
             .project-highlight,
             .experience-item {
@@ -532,7 +673,6 @@
                 display: none !important;
             }
 
-            /* Spacing */
             .resume {
                 padding: 0 !important;
             }
@@ -551,7 +691,6 @@
                 margin-bottom: 4mm !important;
             }
 
-            /* Headings */
             .section-title {
                 color: #000 !important;
                 -webkit-text-fill-color: #000 !important;
@@ -565,7 +704,6 @@
                 height: 1px !important;
             }
 
-            /* Name + title */
             .resume-name {
                 color: #000 !important;
                 -webkit-text-fill-color: #000 !important;
@@ -577,20 +715,17 @@
                 color: #000 !important;
             }
 
-            /* Lists */
             .skill-list li::before,
             .achievement-list li::before {
                 color: #000 !important;
             }
 
-            /* Links */
             a,
             .resume-contact a {
                 color: #000 !important;
                 text-decoration: none !important;
             }
 
-            /* Avoid awkward breaks */
             .resume-section,
             .experience-item,
             .project-highlight,
@@ -599,14 +734,54 @@
                 page-break-inside: avoid;
             }
 
-            /* Optional: hide decorative/less essential sections for print */
-            /* Uncomment to shorten: */
-            /* .project-highlight { display:none !important; } */
         }
 
-
-        /* PRINT: tighten spacing, remove large gaps */
         @media print {
+
+            .experience-item ul li:nth-child(n+2) {
+                display: none !important;
+            }
+
+            .experience-item p {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 4px !important;
+            }
+
+            .resume-section {
+                margin-bottom: 8px !important;
+            }
+
+            body {
+                line-height: 1.15 !important;
+            }
+
+            .experience-item ul li:nth-child(n+3) {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 8px !important;
+            }
+
+            .experience-item h3 {
+                margin-bottom: 2px !important;
+            }
+
+            .experience-item p {
+                margin-bottom: 4px !important;
+            }
+
+            .skill-list li:has(span:contains("Business Systems")) {
+                display: none !important;
+            }
+
+            .skill-list li:has(span:contains("Process & Operations")) {
+                display: none !important;
+            }
+
             @page {
                 margin: 10mm;
             }
@@ -624,25 +799,21 @@
                 margin-bottom: 3mm !important;
             }
 
-            /* Reduce excessive top gaps */
             .resume-section:first-of-type {
                 margin-top: 0 !important;
             }
 
-            /* Skills blocks tighter */
             .skill-category {
                 margin-bottom: 3mm !important;
                 padding: 0 !important;
             }
 
-            /* Lists */
             ul,
             li {
                 margin-top: 0 !important;
                 margin-bottom: 2mm !important;
             }
 
-            /* Prevent forced page jumps */
             .resume-section,
             .skill-category,
             .experience-item,
@@ -654,9 +825,85 @@
             }
         }
 
-
-        /* PRINT: ULTRA COMPACT – eliminate gaps & extra pages */
         @media print {
+
+            .experience-item ul li:nth-child(n+2) {
+                display: none !important;
+            }
+
+            .experience-item p {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 4px !important;
+            }
+
+            .resume-section {
+                margin-bottom: 8px !important;
+            }
+
+            body {
+                line-height: 1.15 !important;
+            }
+
+            .experience-item ul li:nth-child(n+3) {
+                display: none !important;
+            }
+
+            .experience-item {
+                margin-bottom: 8px !important;
+            }
+
+            .experience-item h3 {
+                margin-bottom: 2px !important;
+            }
+
+            .experience-item p {
+                margin-bottom: 4px !important;
+            }
+
+            .skill-list li:has(span:contains("Business Systems")) {
+                display: none !important;
+            }
+
+            .skill-list li:has(span:contains("Process & Operations")) {
+                display: none !important;
+            }
+
+            .print-hide {
+                display: none !important;
+            }
+
+            .achievement-list li:nth-child(n+4) {
+                display: none !important;
+            }
+
+            .skill-list li:nth-child(n+6) {
+                display: none !important;
+            }
+
+            .resume-contact {
+                gap: 6px !important;
+            }
+
+            .resume-contact .contact-item {
+                margin: 0 !important;
+            }
+
+            .resume-name {
+                font-size: 1.95rem !important;
+            }
+
+            .resume-title {
+                font-size: 1.05rem !important;
+                margin-bottom: 2mm !important;
+            }
+
+            .section-title {
+                letter-spacing: 0.06em !important;
+            }
+
             @page {
                 margin: 8mm;
             }
@@ -667,36 +914,30 @@
                 line-height: 1.35 !important;
             }
 
-            /* Kill any min-heights that force page breaks */
             * {
                 min-height: 0 !important;
             }
 
-            /* Header */
             .resume-header {
                 margin-bottom: 4mm !important;
                 padding-bottom: 2mm !important;
             }
 
-            /* Sections tighter */
             .resume-section {
                 margin: 2.5mm 0 !important;
                 padding: 0 !important;
             }
 
-            /* Titles */
             .section-title {
                 margin-bottom: 1.5mm !important;
                 padding-bottom: 1mm !important;
                 font-size: 12px !important;
             }
 
-            /* Paragraphs */
             p {
                 margin: 0 0 2mm 0 !important;
             }
 
-            /* Lists */
             ul {
                 margin: 0 0 2mm 0 !important;
                 padding-left: 12px !important;
@@ -706,7 +947,6 @@
                 margin: 0 0 1mm 0 !important;
             }
 
-            /* Project highlights – compact */
             .project-highlight {
                 margin-bottom: 2mm !important;
                 padding: 0 !important;
@@ -716,12 +956,10 @@
                 margin-bottom: 1mm !important;
             }
 
-            /* Skills */
             .skill-category {
                 margin-bottom: 2mm !important;
             }
 
-            /* Disable ALL page-break behavior */
             * {
                 page-break-before: auto !important;
                 page-break-after: auto !important;
@@ -730,7 +968,6 @@
                 break-inside: auto !important;
             }
 
-            /* Footer & header chrome already hidden */
             header,
             footer {
                 display: none !important;
@@ -741,7 +978,6 @@
             }
         }
 
-        /* Back to Top Button */
         .back-to-top {
             display: none;
             position: fixed;
@@ -800,7 +1036,7 @@
     </header>
     <main class="resume">
         <div class="container">
-            <!-- Resume Header -->
+
             <div class="resume-header">
                 <h1 class="resume-name">James Tercenio</h1>
                 <h2 class="resume-title">Automation VA • No-Code/Low-Code Specialist</h2>
@@ -819,7 +1055,7 @@
                 </div>
 
             </div>
-            <!-- Professional Summary -->
+
             <section class="resume-section">
                 <h2 class="section-title">Professional Summary</h2>
                 <p class="summary">
@@ -829,7 +1065,7 @@
                     teams can run systems confidently.
                 </p>
             </section>
-            <!-- Core Skills -->
+
             <section class="resume-section">
                 <h2 class="section-title">Core Skills</h2>
                 <div class="skills-grid">
@@ -853,7 +1089,7 @@
                             <li>System Integration</li>
                         </ul>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category print-hide">
                         <h3 class="skill-category-title">Business Systems</h3>
                         <ul class="skill-list">
                             <li>CRM Development</li>
@@ -875,7 +1111,7 @@
                     </div>
                 </div>
             </section>
-            <!-- Professional Experience -->
+
             <section class="resume-section">
                 <h2 class="section-title">Professional Experience</h2>
                 <div class="experience-item">
@@ -925,8 +1161,8 @@
                     </ul>
                 </div>
             </section>
-            <!-- Key Project Highlights -->
-            <section class="resume-section">
+
+            <section class="resume-section print-hide">
                 <h2 class="section-title">Key Project Highlights</h2>
                 <div class="project-highlight">
                     <h3 class="project-highlight-title">End-to-End Property Sourcing CRM</h3>
@@ -956,8 +1192,8 @@
                     </p>
                 </div>
             </section>
-            <!-- Additional Skills -->
-            <section class="resume-section">
+
+            <section class="resume-section print-hide">
                 <h2 class="section-title">Additional Experience</h2>
                 <div class="experience-item">
                     <div class="experience-header">
@@ -977,10 +1213,10 @@
                     </ul>
                 </div>
             </section>
-            <!-- Download/Print Button -->
+
             <div style="text-align: center;">
                 <button class="download-button" onclick="window.print()">
-                    <!-- <span>🖨️</span> -->
+
                     <span>Print Resume</span>
                 </button>
             </div>
@@ -992,16 +1228,12 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         ↑
     </button>
 
-    <script>
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
+    <script>const backToTopButton = document.getElementById('backToTop');
 
-        // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('show');
@@ -1010,7 +1242,6 @@
             }
         });
 
-        // Scroll to top when clicked
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
