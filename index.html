@@ -421,6 +421,17 @@
             .resume-contact {
                 flex-direction: column;
                 gap: 0.5rem;
+                align-items: flex-start;
+            }
+
+            .contact-item {
+                word-break: break-all;
+                max-width: 100%;
+            }
+
+            .contact-item a {
+                word-break: break-all;
+                overflow-wrap: break-word;
             }
 
             .skills-grid {
@@ -724,6 +735,53 @@
             footer {
                 display: none !important;
             }
+
+            .back-to-top {
+                display: none !important;
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            z-index: 99;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 245, 160, 0.3);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(0, 245, 160, 0.5);
+        }
+
+        .back-to-top.show {
+            display: flex;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -747,7 +805,10 @@
                 <h1 class="resume-name">James Tercenio</h1>
                 <h2 class="resume-title">Automation VA • No-Code/Low-Code Specialist</h2>
                 <div class="resume-contact">
-                    <div class="contact-item"><span>📧</span><span>jamtercenio1223@gmail.com</span></div>
+                    <div class="contact-item"><span>📧</span><span><a href="/cdn-cgi/l/email-protection"
+                                class="__cf_email__"
+                                data-cfemail="7d171c1009180f1e181314124c4f4f4e3d1a101c1411531e1210">[email&#160;protected]</a></span>
+                    </div>
                     <div class="contact-item"><span>📍</span><span>Philippines (Remote)</span></div>
                     <div class="contact-item"><span>🔗</span><a
                             href="https://www.linkedin.com/in/james-tercenio-4b7784357/" rel="noopener noreferrer"
@@ -886,15 +947,6 @@
                     </p>
                 </div>
                 <div class="project-highlight">
-                    <h3 class="project-highlight-title">E-commerce Print Fulfillment Automation</h3>
-                    <p class="project-highlight-stack">Shopify • Dropbox • Mirage Print System</p>
-                    <p class="project-highlight-desc">
-                        Fully automated order-to-print workflow with SKU-based artwork matching and print-ready file
-                        routing. Eliminated manual sorting, reduced errors, and enabled hands-off daily operations for
-                        high-volume business.
-                    </p>
-                </div>
-                <div class="project-highlight">
                     <h3 class="project-highlight-title">Dynamic Form &amp; Data Processing System</h3>
                     <p class="project-highlight-stack">Jotform • Zapier • Airtable</p>
                     <p class="project-highlight-desc">
@@ -936,9 +988,36 @@
     </main>
     <footer>
         <div class="container">
-            <p class="footer-text">© James Tercenio. Built with precision.</p>
+            <p class="footer-text">© 2026 James Tercenio. Built with precision.</p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Scroll to top when clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 
 </html>
