@@ -99,7 +99,7 @@
             color: var(--text-dim);
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, box-shadow 0.25s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -997,18 +997,23 @@
             opacity: 0;
             transform: translateY(20px);
             pointer-events: none;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 30px rgba(0, 245, 160, 0.5);
+            transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .back-to-top.show {
             opacity: 1;
             transform: translateY(0);
             pointer-events: auto;
+        }
+
+
+        .back-to-top.show:hover {
+            transform: translateY(-6px) scale(1.06);
+            box-shadow: 0 6px 30px rgba(0, 245, 160, 0.5);
+        }
+
+        .back-to-top.show:active {
+            transform: translateY(-3px) scale(0.98);
         }
 
         @keyframes fadeInUp {
